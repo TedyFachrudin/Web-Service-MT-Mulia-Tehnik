@@ -22,7 +22,7 @@ export default function Hero({ onOpenModal }) {
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       {/* BG with parallax */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-[75%_center] md:bg-center"
         style={{ backgroundImage: "url('/images/hero-bg.jpg')", transform: `translateY(${scrollY * 0.25}px)`, willChange: 'transform' }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />

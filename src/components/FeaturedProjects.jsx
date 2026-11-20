@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { useInView } from '../hooks/useInView';
 
 const PROJECTS = [
@@ -17,7 +17,38 @@ const DOUBLE = [...PROJECTS, ...PROJECTS];
 export default function FeaturedProjects() {
   const [hRef, hInView] = useInView();
   const [gRef, gInView] = useInView();
-  const [hovered, setHovered] = useState(false);
+  const trackRef = useRef(null);
+  const drag = useRef({ on: false, x: 0, sl: 0 });
+  const [paused, setPaused] = useState(false);
+
+  // Auto-scroll
+  useEffect(() => {
+    const id = setInterval(() => {
+      const el = trackRef.current;
+      if (!el || paused) return;
+      el.scrollLeft += 1;
+      // Loop: when scrolled past the first set, jump back
+      if (el.scrollLeft >= el.scrollWidth / 2) el.scrollLeft = 0;
+    }, 20);
+    return () => clearInterval(id);
+  }, [paused]);
+
+  const onDown = useCallback((x) => {
+    const el = trackRef.current;
+    drag.current = { on: true, x, sl: el.scrollLeft };
+    setPaused(true);
+  }, []);
+
+  const onMove = useCallback((x) => {
+    if (!drag.current.on) return;
+    const el = trackRef.current;
+    el.scrollLeft = drag.current.sl - (x - drag.current.x);
+  }, []);
+
+  const onUp = useCallback(() => {
+    drag.current.on = false;
+    setPaused(false);
+  }, []);
 
   return (
     <section id="proyek" className="bg-white py-12 md:py-16 lg:py-20">
@@ -36,37 +67,37 @@ export default function FeaturedProjects() {
         </p>
       </div>
 
-      {/* Marquee */}
+      {/* Marquee with drag */}
       <div
         ref={gRef}
-        className={`mt-12 md:mt-16 overflow-hidden transition-all duration-[800ms] ${gInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'}`}
+        className={`mt-12 md:mt-16 transition-all duration-[800ms] ${gInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'}`}
         style={{ transitionDelay: '300ms' }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
       >
-        <div className="flex gap-5 animate-marquee" style={{ animationDuration: hovered ? '37.5s' : '30s' }}>
-          {DOUBLE.map((p, i) => (
-            <div
-              key={i}
-              className="shrink-0 w-[280px] md:w-[380px] aspect-[4/3] rounded-xl overflow-hidden relative"
-            >
-              <img src={p.img} alt={p.label} className="w-full h-full object-cover" loading="lazy" />
-              <span className="absolute bottom-4 left-4 text-white font-semibold text-sm bg-black/30 px-3 py-1.5 rounded-lg">{p.label}</span>
-            </div>
-          ))}
+        <div
+          ref={trackRef}
+          className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => { drag.current.on = false; setPaused(false); }}
+          onMouseDown={(e) => { e.preventDefault(); onDown(e.clientX); }}
+          onMouseMove={(e) => onMove(e.clientX)}
+          onMouseUp={onUp}
+          onTouchStart={(e) => onDown(e.touches[0].clientX)}
+          onTouchMove={(e) => onMove(e.touches[0].clientX)}
+          onTouchEnd={onUp}
+        >
+          <div className="flex gap-5 w-max px-5">
+            {DOUBLE.map((p, i) => (
+              <div
+                key={i}
+                className="shrink-0 w-[280px] md:w-[380px] aspect-[4/3] rounded-xl overflow-hidden relative"
+              >
+                <img src={p.img} alt={p.label} className="w-full h-full object-cover pointer-events-none" loading="lazy" />
+                <span className="absolute bottom-4 left-4 text-white font-semibold text-sm bg-black/30 px-3 py-1.5 rounded-lg">{p.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-          width: max-content;
-        }
-      `}</style>
     </section>
   );
 }
