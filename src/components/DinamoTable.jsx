@@ -38,9 +38,9 @@ export default function DinamoTable() {
         </div>
 
         {/* Table */}
-        <div className="mt-8 border border-gray-100 rounded-2xl overflow-hidden">
+        <div className="mt-8 border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
           {DINAMO_DATA[TABS[active]].map((item, i) => (
-            <div key={item} className={`flex flex-col sm:flex-row items-start sm:items-center justify-between px-6 py-4 ${i > 0 ? 'border-t border-gray-100' : ''}`}>
+            <div key={item} className={`flex flex-col sm:flex-row items-start sm:items-center justify-between px-6 py-4 ${i > 0 ? 'border-t border-gray-200' : ''}`}>
               <span className="text-[#1a1a1a] font-medium text-base">{item}</span>
               <a
                 href={waUrl(`Halo MT. Mulia Tehnik, saya ingin tanya biaya service/gulung ${item}. Terima kasih.`)}
