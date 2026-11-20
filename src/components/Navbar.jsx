@@ -82,7 +82,7 @@ export default function Navbar() {
                 background: 'rgba(255,255,255,0.97)',
                 backdropFilter: 'blur(8px)',
                 borderRadius: 30,
-                border: '2px solid #000000ff',
+                border: '1px solid #000000ff',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
               }
             : {
