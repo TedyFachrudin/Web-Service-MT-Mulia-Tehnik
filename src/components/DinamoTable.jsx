@@ -81,7 +81,7 @@ export default function DinamoTable() {
 
           <div
             ref={scrollRef}
-            className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 cursor-grab active:cursor-grabbing select-none"
+            className="flex gap-5 overflow-x-auto pb-4 cursor-grab active:cursor-grabbing select-none"
             style={{ scrollbarWidth: 'none' }}
             onMouseDown={(e) => { e.preventDefault(); onDown(e.clientX); }}
             onMouseMove={(e) => onMove(e.clientX)}
@@ -95,7 +95,7 @@ export default function DinamoTable() {
               <div
                 key={`${item.cat}-${item.name}`}
                 data-slide
-                className="snap-center shrink-0 w-[260px] md:w-[300px] rounded-2xl overflow-hidden border border-gray-200 shadow-sm"
+                className="shrink-0 w-[260px] md:w-[300px] rounded-2xl overflow-hidden border border-gray-200 shadow-sm"
               >
                 {/* Image placeholder */}
                 <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center">
