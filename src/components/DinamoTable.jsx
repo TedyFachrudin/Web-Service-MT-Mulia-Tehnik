@@ -5,10 +5,24 @@ import { DINAMO_DATA, waUrl } from '../data';
 
 const TABS = ['Semua', ...Object.keys(DINAMO_DATA)];
 
-// Flatten all dinamo items with their category
-// ponytail: placeholder images — replace img with real photo URLs later
+// ponytail: image map keyed by dinamo name
+const DINAMO_IMAGES = {
+  'Dinamo National 125': '/images/dinamo-national-125.jpg',
+  'Dinamo National 200': '/images/dinamo-national-200.jpg',
+  'Shimizu PS 226': '/images/dinamo-shimizu-ps226.jpg',
+  'Dinamo Semi 100': '/images/dinamo-semi-100.jpg',
+  'Dinamo Semi (6 cm)': '/images/dinamo-semi-6cm.jpg',
+  'Dinamo Semi (7 cm)': '/images/dinamo-semi-7cm.jpg',
+  'Dinamo Semi (8 cm)': '/images/dinamo-semi-8cm.jpg',
+  'Dinamo Jet Pump 255': '/images/dinamo-jetpump-255.jpg',
+  'Dinamo Jet Pump 370': '/images/dinamo-jetpump-370.jpg',
+  'Dinamo Jet Pump 500': '/images/dinamo-jetpump-500.jpg',
+  'Golstar 250 / Shimizu 268 / Sanyo 250 / Wasser 250': '/images/dinamo-multi-250.jpg',
+  'Grunfos 10 cm': '/images/dinamo-grundfos-10cm.jpg',
+};
+
 const ALL_ITEMS = Object.entries(DINAMO_DATA).flatMap(([cat, items]) =>
-  items.map((name) => ({ name, cat, img: null }))
+  items.map((name) => ({ name, cat, img: DINAMO_IMAGES[name] || null }))
 );
 
 export default function DinamoTable() {
