@@ -133,7 +133,7 @@ export default function Navbar() {
 
             {/* CTA Button Desktop */}
             <a
-              href={waUrl('Halo MT. Mulia Tehnik, saya ingin konsultasi.')}
+              href={waUrl('Halo Toko Mulia Tehnik, saya ingin konsultasi.')}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:inline-flex items-center px-6 py-3 bg-[#0EA5E9] hover:bg-[#0284C7] text-white text-[16px] font-semibold rounded-full transition-colors duration-[400ms]"
@@ -178,7 +178,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href={waUrl('Halo MT. Mulia Tehnik, saya ingin konsultasi.')}
+              href={waUrl('Halo Toko Mulia Tehnik, saya ingin konsultasi.')}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 px-8 py-4 bg-[#0EA5E9] hover:bg-[#0284C7] text-white text-lg font-semibold rounded-full transition-colors"

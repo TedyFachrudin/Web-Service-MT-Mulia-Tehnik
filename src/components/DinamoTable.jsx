@@ -136,7 +136,7 @@ export default function DinamoTable() {
                   <span className="text-sm font-semibold text-[#1a1a1a]">{item.name}</span>
                   <span className="text-xs text-gray-400">{item.cat}</span>
                   <a
-                    href={waUrl(`Halo MT. Mulia Tehnik, saya ingin tanya biaya service/gulung ${item.name}. Terima kasih.`)}
+                    href={waUrl(`Halo Toko Mulia Tehnik, saya ingin tanya biaya service/gulung ${item.name}. Terima kasih.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#0EA5E9] text-[#0EA5E9] text-sm font-medium hover:bg-[#0EA5E9] hover:text-white transition-colors duration-300"

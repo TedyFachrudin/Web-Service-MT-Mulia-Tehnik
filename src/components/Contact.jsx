@@ -16,7 +16,7 @@ function ContactForm({ onClose }) {
     if (!form.firstName || !form.phone) return;
     setSending(true);
     const msg = [
-      `Halo MT. Mulia Tehnik,`,
+      `Halo Toko Mulia Tehnik,`,
       `Nama: ${form.firstName} ${form.lastName}`.trim(),
       `Telepon: ${form.phone}`,
       form.email && `Email: ${form.email}`,
@@ -85,7 +85,7 @@ export default function Contact({ isModal, onClose }) {
             {/* Left — Info */}
             <div className="lg:w-[400px] bg-gray-800 text-white p-8 flex flex-col">
               <div className="w-full h-[200px] rounded-xl overflow-hidden mb-8">
-                <img src="/images/contact-panel.jpg" alt="MT. Mulia Tehnik" className="w-full h-full object-cover" loading="lazy" />
+                <img src="/images/contact-panel.jpg" alt="Toko Mulia Tehnik" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <h3 className="text-xl font-semibold mb-6">Informasi Kontak</h3>
               <div className="flex flex-col gap-5">

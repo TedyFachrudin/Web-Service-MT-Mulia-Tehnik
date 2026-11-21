@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
             {/* Center */}
             <div className={`flex flex-col gap-3.5 transition-all duration-[800ms] ${cInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'}`} style={{ transitionDelay: '500ms' }}>
               <div className="flex-1 rounded-[18px] border border-gray-100 overflow-hidden min-h-[400px]">
-                <img src="/images/why-choose-us.jpg" alt="Teknisi MT. Mulia Tehnik" className="w-full h-full object-cover" loading="lazy" />
+                <img src="/images/why-choose-us.jpg" alt="Teknisi Toko Mulia Tehnik" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <TrustBadge />
             </div>
@@ -97,7 +97,7 @@ export default function WhyChooseUs() {
               {CARDS.map((c, i) => <Card key={i} card={c} />)}
             </div>
             <div className="rounded-[18px] border border-gray-100 overflow-hidden aspect-[4/3]">
-              <img src="/images/why-choose-us.jpg" alt="Teknisi MT. Mulia Tehnik" className="w-full h-full object-cover" loading="lazy" />
+              <img src="/images/why-choose-us.jpg" alt="Teknisi Toko Mulia Tehnik" className="w-full h-full object-cover" loading="lazy" />
             </div>
             <TrustBadge />
           </div>

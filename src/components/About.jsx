@@ -17,7 +17,7 @@ export default function About() {
         {/* Left — Image */}
         <div className={`flex-1 relative transition-all duration-[800ms] delay-500 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'}`}>
           <div className="w-full aspect-[4/5] rounded-xl overflow-hidden relative">
-            <img src="/images/about.jpg" alt="Teknisi MT. Mulia Tehnik" className="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/about.jpg" alt="Teknisi Toko Mulia Tehnik" className="w-full h-full object-cover" loading="lazy" />
             {/* Badge: 10+ */}
             <div className="absolute -top-4 -right-4 md:top-4 md:right-4 w-24 h-24 rounded-full bg-[#0EA5E9] flex flex-col items-center justify-center shadow-lg">
               <span className="text-white text-2xl font-bold">10+</span>

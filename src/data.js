@@ -1,6 +1,6 @@
 // Business data - MT. Mulia Tehnik
 export const BUSINESS = {
-  name: 'MT. Mulia Tehnik',
+  name: 'Toko Mulia Tehnik',
   phone: '082121539121',
   whatsapp: '6282121539121',
   waLink: 'https://wa.me/6282121539121',
@@ -83,25 +83,25 @@ export const TESTIMONIALS = [
   {
     name: 'Budi Santoso',
     location: 'Karang Satria, Bekasi',
-    text: '"Pompa air di rumah mati mendadak tengah malam, langsung hubungi MT. Mulia Tehnik. Teknisinya datang pagi-pagi, cepat tanggap dan langsung beres. Harga juga transparan, tidak ada biaya tambahan. Sangat recommended!"',
+    text: '"Pompa air di rumah mati mendadak tengah malam, langsung hubungi Toko Mulia Tehnik. Teknisinya datang pagi-pagi, cepat tanggap dan langsung beres. Harga juga transparan, tidak ada biaya tambahan. Sangat recommended!"',
     rating: 5,
   },
   {
     name: 'Siti Nurhaliza',
     location: 'Summarecon Bekasi',
-    text: '"Pasang filter air di rumah kami hasilnya luar biasa. Air yang tadinya keruh dan berbau sekarang jernih sempurna. Teknisinya ramah dan menjelaskan cara perawatan. Terima kasih MT. Mulia Tehnik!"',
+    text: '"Pasang filter air di rumah kami hasilnya luar biasa. Air yang tadinya keruh dan berbau sekarang jernih sempurna. Teknisinya ramah dan menjelaskan cara perawatan. Terima kasih Toko Mulia Tehnik!"',
     rating: 5,
   },
   {
     name: 'Hendra Wijaya',
     location: 'Tambun Utara',
-    text: '"Sudah 2 kali pakai jasa MT. Mulia Tehnik untuk service pompa dan pasang jetpump baru. Pekerjaannya rapi, bergaransi, dan harganya masuk akal. Teknisinya juga sopan dan profesional."',
+    text: '"Sudah 2 kali pakai jasa Toko Mulia Tehnik untuk service pompa dan pasang jetpump baru. Pekerjaannya rapi, bergaransi, dan harganya masuk akal. Teknisinya juga sopan dan profesional."',
     rating: 5,
   },
   {
     name: 'Ratna Dewi',
     location: 'Wisma Asri, Bekasi',
-    text: '"Proses pengeboran sumur jetpump di rumah kami berjalan lancar dan cepat. Airnya langsung keluar deras dan bersih. MT. Mulia Tehnik memang ahlinya! Pelayanan memuaskan dari awal sampai akhir."',
+    text: '"Proses pengeboran sumur jetpump di rumah kami berjalan lancar dan cepat. Airnya langsung keluar deras dan bersih. Toko Mulia Tehnik memang ahlinya! Pelayanan memuaskan dari awal sampai akhir."',
     rating: 5,
   },
   {
