@@ -20,7 +20,7 @@ export default function EmergencyBanner() {
             </h2>
             <div className="flex items-center gap-2 mt-4 text-white/90">
               <Clock className="w-5 h-5" />
-              <span className="text-base font-medium">Tersedia 24 Jam Setiap Hari</span>
+              <span className="text-base font-medium">Tersedia Setiap Hari Pukul 08:00 - 18:00</span>
             </div>
             <a
               href={phoneUrl()}
