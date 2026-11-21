@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 import { DINAMO_DATA, waUrl } from '../data';
@@ -16,8 +16,20 @@ export default function DinamoTable() {
   const [ref, inView] = useInView();
   const scrollRef = useRef(null);
   const drag = useRef({ on: false, x: 0, sl: 0 });
+  const [paused, setPaused] = useState(false);
 
   const filtered = active === 0 ? ALL_ITEMS : ALL_ITEMS.filter((d) => d.cat === TABS[active]);
+
+  // Auto-scroll
+  useEffect(() => {
+    const id = setInterval(() => {
+      const el = scrollRef.current;
+      if (!el || paused) return;
+      el.scrollLeft += 1;
+      if (el.scrollLeft >= el.scrollWidth - el.clientWidth) el.scrollLeft = 0;
+    }, 20);
+    return () => clearInterval(id);
+  }, [paused]);
 
   const scroll = (dir) => {
     const el = scrollRef.current;
@@ -29,12 +41,13 @@ export default function DinamoTable() {
   const onDown = useCallback((x) => {
     const el = scrollRef.current;
     drag.current = { on: true, x, sl: el.scrollLeft };
+    setPaused(true);
   }, []);
   const onMove = useCallback((x) => {
     if (!drag.current.on) return;
     scrollRef.current.scrollLeft = drag.current.sl - (x - drag.current.x);
   }, []);
-  const onUp = useCallback(() => { drag.current.on = false; }, []);
+  const onUp = useCallback(() => { drag.current.on = false; setPaused(false); }, []);
 
   return (
     <section id="dinamo" className="bg-white px-5 md:px-12 lg:px-20 py-12 md:py-16 lg:py-20">
@@ -83,10 +96,11 @@ export default function DinamoTable() {
             ref={scrollRef}
             className="flex gap-5 overflow-x-auto pb-4 cursor-grab active:cursor-grabbing select-none"
             style={{ scrollbarWidth: 'none' }}
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => { drag.current.on = false; setPaused(false); }}
             onMouseDown={(e) => { e.preventDefault(); onDown(e.clientX); }}
             onMouseMove={(e) => onMove(e.clientX)}
             onMouseUp={onUp}
-            onMouseLeave={onUp}
             onTouchStart={(e) => onDown(e.touches[0].clientX)}
             onTouchMove={(e) => onMove(e.touches[0].clientX)}
             onTouchEnd={onUp}
