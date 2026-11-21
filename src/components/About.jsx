@@ -2,7 +2,7 @@ import { CheckCircle } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
 const CHECKS = [
-  'Layanan Darurat Pompa Air 24/7',
+  'Layanan Darurat Pompa Air Tersedia Setiap Hari Pukul 08:00 - 18:00',
   'Harga Terjangkau untuk Semua Layanan',
   'Tim Berlisensi & Berpengalaman',
   '2.500+ Pelanggan Puas',

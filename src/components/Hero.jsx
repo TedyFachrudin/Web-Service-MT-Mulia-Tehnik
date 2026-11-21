@@ -39,7 +39,7 @@ export default function Hero({ onOpenModal }) {
             transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
           }}
         >
-          <span className="text-white text-sm font-medium">Tersedia 24/7 Setiap Hari</span>
+          <span className="text-white text-sm font-medium">Tersedia Setiap Hari Pukul 08:00 - 18:00</span>
         </div>
 
         {/* Headline */}

@@ -6,7 +6,7 @@ const CARDS = [
   { title: 'Teknisi Berlisensi & Berpengalaman', desc: 'Teknisi terlatih dan berpengalaman yang menghadirkan pengerjaan aman, andal, dan memuaskan di setiap kunjungan layanan.', Icon: ShieldCheck, orange: true },
   { title: 'Layanan Cepat & Andal', desc: 'Kami datang tepat waktu, menyelesaikan setiap pekerjaan secara efisien, dan memberikan solusi pompa air yang tahan lama.', Icon: Clock, orange: false },
   { title: 'Pengerjaan Berkualitas', desc: 'Kami menggunakan material premium dan teknik terbukti untuk menghadirkan solusi pompa air yang awet dan andal untuk tahun-tahun mendatang.', Icon: Star, orange: false },
-  { title: 'Dukungan 24/7', desc: 'Tim kami siap siang dan malam untuk menangani masalah pompa air mendesak dengan respons cepat dan layanan darurat yang bisa diandalkan.', Icon: Headphones, orange: false },
+  { title: 'Dukungan Tersedia Setiap Hari Pukul 08:00 - 18:00', desc: 'Tim kami siap siang dan malam untuk menangani masalah pompa air mendesak dengan respons cepat dan layanan darurat yang bisa diandalkan.', Icon: Headphones, orange: false },
 ];
 
 function TrustBadge() {
