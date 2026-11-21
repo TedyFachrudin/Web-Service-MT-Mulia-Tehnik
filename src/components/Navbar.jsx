@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Menu, X, Droplets } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { BUSINESS, waUrl } from '../data';
 
 const NAV_LINKS = [
@@ -106,9 +106,9 @@ export default function Navbar() {
             <a
               href="#hero"
               onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              className="flex items-center gap-2 shrink-0"
+              className="flex items-center gap-2.5 shrink-0"
             >
-              <Droplets className={`w-7 h-7 transition-colors duration-500 ${scrolled ? 'text-[#0EA5E9]' : 'text-white'}`} />
+              <img src="/images/logo.svg" alt={BUSINESS.name} className="h-9 md:h-10 w-auto object-contain shrink-0" />
               <span className={`text-lg font-bold tracking-tight transition-colors duration-500 ${scrolled ? 'text-[#1a1a1a]' : 'text-white'}`}>
                 {BUSINESS.name}
               </span>
@@ -158,8 +158,8 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="fixed inset-0 z-[60] bg-white flex flex-col animate-in fade-in duration-200">
           <div className="flex items-center justify-between px-6 h-[80px] border-b border-gray-100">
-            <a href="#hero" className="flex items-center gap-2" onClick={(e) => { e.preventDefault(); scrollTo('#hero'); }}>
-              <Droplets className="w-7 h-7 text-[#0EA5E9]" />
+            <a href="#hero" className="flex items-center gap-2.5" onClick={(e) => { e.preventDefault(); scrollTo('#hero'); }}>
+              <img src="/images/logo.svg" alt={BUSINESS.name} className="h-8 w-auto object-contain shrink-0" />
               <span className="text-lg font-bold tracking-tight text-[#1a1a1a]">{BUSINESS.name}</span>
             </a>
             <button onClick={() => setMobileOpen(false)} className="p-2 text-[#1a1a1a] hover:bg-gray-100 rounded-lg transition-colors" aria-label="Tutup menu">

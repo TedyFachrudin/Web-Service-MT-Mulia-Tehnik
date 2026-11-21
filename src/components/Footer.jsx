@@ -1,4 +1,4 @@
-import { Droplets, Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { BUSINESS, SERVICES } from '../data';
 
 const QUICK_LINKS = [
@@ -26,8 +26,8 @@ export default function Footer() {
       <div className="px-5 md:px-12 lg:px-20 py-12 md:py-16">
         <div className="max-w-[1440px] mx-auto">
           {/* Logo */}
-          <div className="flex items-center gap-2 mb-10">
-            <Droplets className="w-8 h-8 text-white" />
+          <div className="flex items-center gap-3 mb-10">
+            <img src="/images/logo.svg" alt={BUSINESS.name} className="h-10 w-auto object-contain shrink-0" />
             <span className="text-xl font-bold">{BUSINESS.name}</span>
           </div>
 
