@@ -1,9 +1,9 @@
 // Business data - MT. Mulia Tehnik
 export const BUSINESS = {
   name: 'MT. Mulia Tehnik',
-  phone: '08123456789',
-  whatsapp: '628123456789',
-  waLink: 'https://wa.me/628123456789',
+  phone: '082121539121',
+  whatsapp: '6282121539121',
+  waLink: 'https://wa.me/6282121539121',
   email: 'muliatehnik@email.com',
   address: 'Jl. Karang Satria No. 5, Bekasi Utara',
 };
