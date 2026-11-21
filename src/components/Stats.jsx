@@ -4,7 +4,7 @@ const STATS = [
   { end: 10, suffix: '+', label: 'Tahun Pengalaman', decimal: false },
   { end: 2.5, suffix: 'rb+', label: 'Proyek Selesai', decimal: true },
   { end: 98, suffix: '%', label: 'Kepuasan Pelanggan', decimal: false },
-  { end: 8, suffix: ':00 - 18:00', label: 'Jam Operasional', decimal: false },
+  { end: 10, suffix: '/7', label: 'Layanan Darurat', decimal: false },
 ];
 
 function StatItem({ end, suffix, label, decimal, inView }) {
